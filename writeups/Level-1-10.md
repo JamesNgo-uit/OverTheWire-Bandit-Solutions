@@ -20,6 +20,6 @@
 **Commands Used:**
 * `cat`: To read the content of the file.
 
-**My logic:** I realized that we cannot `cat` the " - " file in regular way. Because, it's related to the flags which are the options to modify the behavior of the command. To read the file named " - " we need to use `./` relative path to tell the command exactly where the file is located.
+**My logic:** I realized that simply running `cat -` does not work because the dash ( - ) is typically interpreted by Linux commands as a flag or an indicator for Standard Input (stdin). To bypass this and treat the dash as a literal filename, I used the relative path `./-`. This explicitly tells the `cat` command exactly where the file is located within the current directory.
 
 **Key concept:** Basic Linux Navigation and file reading 
