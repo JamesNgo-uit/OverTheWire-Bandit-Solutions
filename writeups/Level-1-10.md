@@ -15,7 +15,7 @@
 
 ## level 1 -> level 2
 
-**Goals:** The password for the level 2 which is stored in a file called " - ".
+**Goals:** The password for the level 2, which is stored in a file called " - ".
 
 **Commands Used:**
 * `cat`: To read the content of the file.
@@ -23,3 +23,15 @@
 **My logic:** I realized that simply running `cat -` does not work because the dash ( - ) is typically interpreted by Linux commands as a flag or an indicator for Standard Input (stdin). To bypass this and treat the dash as a literal filename, I used the relative path `./-`. This explicitly tells the `cat` command exactly where the file is located within the current directory.
 
 **Key concept:** Basic Linux Navigation and file reading 
+
+---
+
+## level 2 -> level 3
+
+**Goals:** The password for the next level is stored in a file called "--spaces in this filename--" located in the home directory.
+
+**Commands Used:**
+* `cat`: To read the content of the file.
+**Example:** `cat ./--spaces\ in\ this\ filename--`.
+
+**My logic:** You cannot read a file has spaces by using `cat` commands or even using relative path without attention. Because the shell treats the spaces as separators between the commands or arguments. To bypass the challenge I use a backslash before each space. 
