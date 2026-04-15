@@ -34,6 +34,11 @@
 * `cat`: To read the content of the file.
 **Example:** `cat ./--spaces\ in\ this\ filename--`.
 
-**My logic:** You cannot read a file that has spaces by using `cat` command or even using a relative path without attention. Because the shell treats the spaces as separators between the commands or arguments. To bypass the challenge, I use a backslash before each space. 
-
+**My logic:** I discovered that the shell treats the spaces as delimiters(seperators) between commands and arguments. If I try to `cat ./--spaces in this filename--`. The shell thinks I am trying to read four seperate files.\ 
+To bypass this, I used backslash escaping (eg.,` spaces\ in\ this\ filename`)in orther to tell the shell treats spaces as literal characters rather than seperators.\
+Other than this approach, I discovered two better ways that are used in professional methods:
+1. **Quoting:** Enclosing the filename in double quotes (cat "./--spaces in this filename--").
+2. **Tab Completion:** In the real world senerio, pressing the `TAB` key word allows the shell automatically escape the spaces for you, which is faster and prevents typos.
+ 
 **Key concept:** Basic Linux Navigation and file reading
+
