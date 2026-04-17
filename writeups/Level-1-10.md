@@ -31,8 +31,8 @@
 **Goals:** The password for the next level is stored in a file called "--spaces in this filename--" located in the home directory.
 
 **Commands Used:**
-* `cat`: To read the content of the file.
-**Example:** `cat ./--spaces\ in\ this\ filename--`.
+  `cat ./--spaces\ in\ this\ filename--`\
+* `cat`: To read the content of the file. 
 
 **My logic:** I discovered that the shell treats spaces as delimiters (separators) between commands and arguments. If I try to `cat ./--spaces in this filename--`. The shell thinks I am trying to read four separate files.\ 
 To bypass this, I used backslash escaping (e.g.,` spaces\ in\ this\ filename`) to tell the shell to treat spaces as literal characters rather than separators.\
@@ -41,4 +41,20 @@ Other than this approach, I discovered two better ways that are used in professi
 2. **Tab Completion:** In the real-world scenario, pressing the `TAB` key allows the shell to automatically escape the spaces for you, which is faster and prevents typos.
  
 **Key concept:** Basic Linux Navigation and file reading
+
+---
+
+## level 3 -> level 4
+
+**Goal:** The password for the next level is stored in a hidden file, which is located in the "inhere" directory.
+
+**Commands Used:**
+  `ls -a`\
+* `ls` : To list files in the current directory.
+* `cat` : To read the content of the file.
+
+**My logic:** I realized that the hidden file cannot be display by using only the `ls` command. To bypass this challenge, I added a flag `-a` to modify the output of `ls` command. This command will show all files, even the hidden files that start with a dot `.`. 
+
+**Key concept:** Basic Linux Navigation and file reading
+
 
