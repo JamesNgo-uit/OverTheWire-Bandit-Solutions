@@ -53,7 +53,7 @@ Other than this approach, I discovered two better ways that are used in professi
 * `ls` : To list files in the current directory.
 * `cat` : To read the content of the file.
 
-**My logic:** I realized that the hidden file cannot be displayed by using only the `ls` command. To bypass this challenge, I added a flag `-a` to modify the output of `ls` command. This command will show all files, even the hidden files that start with a dot `.`.
+**My logic:** I observed that hidden files are not displayed by the standard `ls` command. In Linux, files starting with a dot-often called dotfiles- are hidden by default to keep directory listing clean. To reveal the password file, I appended the `-a`(all) to the `ls` command. This instructs the shell to list all the entries, including those starting with a dot, allowing me to identify the hidden directory. 
 
 **Key concept:** Basic Linux Navigation and file reading
 
