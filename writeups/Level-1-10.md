@@ -70,3 +70,20 @@ Other than this approach, I discovered two better ways that are used in professi
 **My logic:** In this level, the objective was to identify the file type of multiple files within a directory to find human-readable text. I utilized the `file` command. Instead of manually inspecting each file one by one, I used an asterisk wildcard `*` as an argument. This allowed the command to process every file in the current directory simultaneously, quickly revealing which file contained the ASCII text password.
 
 **Key concept:** Data Identification and Efficiency
+
+---
+
+## level 5 -> level 6
+
+**Goal:** The password for the next level is stored in the "inhere" directory and has all of the following properties: Human-readable, 1033 bytes, and not executable.
+ 
+**Commands Used:** 
+  `find . -type f -size 1033c ! -executable`
+* `find` : To search for files or directories based on various filters like name, size, type, and modification time.
+
+**My logic:** The goal of this level was to identify the file with specific properties. I utilized the `find` command, and started with a dot `.` to tells the command to start searching from current directory. First, I appended `-type f` to look for files only. Also, I appended `-size 1033c`('c' stands for bytes) to search for an exact size of 1033 bytes. Finally, I inspected for not executable file by adding `! -executable`('!' stands for NOT).
+
+**Key concept:** Data Identification
+
+---
+
