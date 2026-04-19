@@ -57,4 +57,16 @@ Other than this approach, I discovered two better ways that are used in professi
 
 **Key concept:** Basic Linux Navigation and file reading
 
+---
 
+## level 4 -> level 5
+
+**Goal:** The password for the next level is stored in the only human-readable file in the "inhere" directory.
+
+**Comands Used:**
+  `file ./*` 
+* `file` : The utility used to determine the file type of a specific file.
+
+**My logic:** In this level, we need a command to know the type of the files. In order to do this work, we have a new command that is the `file` command. You can manually check all of the files one-by-one, but there was a trick. By appending an asterisk `*` that means all of the file in the current directory. This allows you can check the file type of the stuffs with an only one command.
+
+**Key concept:** Basic Linux Navigation and file reading
