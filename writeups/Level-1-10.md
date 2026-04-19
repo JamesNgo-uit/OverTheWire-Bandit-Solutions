@@ -69,4 +69,4 @@ Other than this approach, I discovered two better ways that are used in professi
 
 **My logic:** In this level, the objective was to identify the file type of multiple files within a directory to find human-readable text. I utilized the `file` command. Instead of manually inspecting each file one by one, I used an asterisk wildcard `*` as an argument. This allowed the command to process every file in the current directory simultaneously, quickly revealing which file contained the ASCII text password.
 
-**Key concept:** Basic Linux Navigation and file reading
+**Key concept:** Data Identification and Efficiency
