@@ -81,7 +81,7 @@ Other than this approach, I discovered two better ways that are used in professi
   `find . -type f -size 1033c ! -executable`
 * `find`: To search for files or directories based on various filters like name, size, type, and modification time.
 
-**My logic:** The goal of this level was to identify the file with specific properties. I utilized the `find` command, and started with a dot `.` to tell the command to start searching from the current directory. First, I appended `-type f` to look for files only. Also, I appended `-size 1033c`('c' stands for bytes) to search for an exact size of 1033 bytes. Finally, I inspected for a not-executable file by adding `! -executable`('!' stands for NOT).
+**My logic:** The goal of this level was to identify the file with specific properties. I utilized the `find` command, and started with a dot `.` to tell the command to start searching from the current directory. First, I appended `-type f` to look for files only. Also, I appended `-size 1033c`('c' stands for bytes) to search for an exact size of 1033 bytes. Finally, I inspected for a non-executable file by adding `! -executable`('!' stands for NOT).
 
 **Key concept:** Data Identification.
 
