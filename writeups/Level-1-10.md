@@ -67,6 +67,6 @@ Other than this approach, I discovered two better ways that are used in professi
   `file ./*` 
 * `file` : The utility used to determine the file type of a specific file.
 
-**My logic:** In this level, we need a command to know the type of the files. In order to do this work, we have a new command, which is the `file` command. You can manually check all of the files one by one, but there was a trick. Appending an asterisk `*` means all of the files in the current directory. This allows you to check the file type of the stuff with only one command.
+**My logic:** In this level, the objective was to identify the file type of multiple files within a directory to find human-readable text. I utilized the `file` command. Instead of manually inspecting each file one by one, I used an asterisk wildcard `*` as an argument. This allowed the command to process every file in the current directory simultaneously, quickly revealing which file contained the ASCII text password.
 
 **Key concept:** Basic Linux Navigation and file reading
