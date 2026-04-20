@@ -82,9 +82,9 @@ Other than this approach, I discovered two better ways that are used in professi
 * `find`: To search for files or directories based on various filters like name, size, type, and modification time.
 
 **My logic:** The objective of this level was to locate a specific file based on multiple attributes within a complex directory structure. I utilized the `find` command, using a dot `.` to target the current directory with a recursive search. To narrow down the result, I applied three specific filters:\
-1. `-type f` :To restrict the search to regular files only.
-2. `-size 1033c` :To target the exact file size of 1033 bytes(where 'c' denotes bytes).
-3. `! -executable` :Using the negation operator(`!`) to filter out any files with execution permissions.
+1. `-type f`: To restrict the search to regular files only.
+2. `-size 1033c`: To target the exact file size of 1033 bytes(where 'c' denotes bytes).
+3. `! -executable`: Using the negation operator(`!`) to filter out any files with execution permissions.
 By combining these criteria, I was able to isolate the single file that met all security requirements.
  
 **Key concept:** Data Identification.
