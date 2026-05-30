@@ -112,7 +112,7 @@ By combining these criteria, I was able to isolate the single file that met all 
   `grep "millionth" data.txt or cat data.txt | grep "millionth"`
 * `grep`: to search for a specific pattern (like "millionth") inside the file.
 
-**My logic:** I realized when I `cat` the file, a bunch of stuff appeared, and we could not seak or see any words in this file because it was like a hacker's monitor. So, we need something to filter the output and we got a useful command `grep`, which is used to search for a specific pattern inside a file. With this command, I can easily find the password in a short period of time.
+**My logic:** I realized when I `cat` the file, a bunch of stuff appeared, and we could not seek or see any words in this file because it was like a hacker's monitor. So, we need something to filter the output and we got a useful command `grep`, which is used to search for a specific pattern inside a file. With this command, I can easily find the password in a short period of time.
  
 ---
 
