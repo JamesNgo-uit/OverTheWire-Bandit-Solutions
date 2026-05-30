@@ -31,7 +31,7 @@
 **Goals:** The password for the next level is stored in a file called "--spaces in this filename--" located in the home directory.
 
 **Commands Used:**
-  `cat ./--spaces\ in\ this\ filename--`\
+  `cat ./--spaces\ in\ this\ filename--\`
 * `cat`: To read the content of the file. 
 
 **My logic:** I discovered that the shell treats spaces as delimiters (separators) between commands and arguments. If I try to `cat ./--spaces in this filename--`. The shell thinks I am trying to read four separate files.\ 
@@ -49,7 +49,7 @@ Other than this approach, I discovered two better ways that are used in professi
 **Goal:** The password for the next level is stored in a hidden file, which is located in the "inhere" directory.
 
 **Commands Used:**
-  `ls -a`\
+  `ls -a`
 * `ls`: To list files in the current directory.
 * `cat`: To read the content of the file.
 
@@ -93,4 +93,24 @@ By combining these criteria, I was able to isolate the single file that met all 
 
 ## level 6 -> level 7
 
-**Goal:**
+**Goal:** The password for the next level is stored somewhere on the server and has all of following properties: owned by user bandit7, owned by group bandit 6, and 33 bytes in size.
+
+**Commands Used:**
+  `find / -user bandit7 -group bandit6 -size 33c 2>dev/null`
+* `find`: To search for files or directories based on various filters like name, size, type, and modification time.
+
+**My logic:** The objective was to locate a specific file based on multiple attributes on the entire server. I utilized the `find` command, using a slash (`/`) to search for the entire root directory. I break down the result,  
+
+---
+
+## level 7 -> level 8
+
+**Goal:** The password for the next level is stored in a file named "data.txt" next to the word millionth.
+
+**Commands Used:**
+  `grep "millionth" data.txt or cat data.txt | grep "millionth"`
+* `grep`: to search for a specific pattern (like "millionth") inside the file.
+
+**My logic:** I was realized when I cat the file, a bunch of stuff will appeared and we cannot seak or see any word in this file because it was like hacker's monitor. So, we need something to filter the output and we got a useful command `grep`, which is used to search for a specific pattern inside a file. With this command, I can easily find the password as short period of time.
+ 
+
