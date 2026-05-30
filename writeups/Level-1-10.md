@@ -99,7 +99,8 @@ By combining these criteria, I was able to isolate the single file that met all 
   `find / -user bandit7 -group bandit6 -size 33c 2>dev/null`
 * `find`: To search for files or directories based on various filters like name, size, type, and modification time.
 
-**My logic:** The objective was to locate a specific file based on multiple attributes on the entire server. I utilized the `find` command, using a slash (`/`) to search for the entire root directory. I break down the result,  
+**My logic:** The objective was to locate a specific file based on multiple attributes on the entire server. I utilized the `find` command, using a slash (`/`) to search for the entire root directory. I narrowed down the result by adding some strictly attributes like `-user bandit7 -group bandit6 -size 33c` to find the exact file from user bandit7, owned by group bandit6 and it has 33 bytes in size. Finally, I used the command `2>dev/null`, the objective of this command was to hide all the "permission denied" errors from the screen.
+
 
 ---
 
@@ -111,6 +112,8 @@ By combining these criteria, I was able to isolate the single file that met all 
   `grep "millionth" data.txt or cat data.txt | grep "millionth"`
 * `grep`: to search for a specific pattern (like "millionth") inside the file.
 
-**My logic:** I was realized when I cat the file, a bunch of stuff will appeared and we cannot seak or see any word in this file because it was like hacker's monitor. So, we need something to filter the output and we got a useful command `grep`, which is used to search for a specific pattern inside a file. With this command, I can easily find the password as short period of time.
+**My logic:** I realized when I `cat` the file, a bunch of stuff appeared, and we could not seak or see any words in this file because it was like a hacker's monitor. So, we need something to filter the output and we got a useful command `grep`, which is used to search for a specific pattern inside a file. With this command, I can easily find the password in a short period of time.
  
+---
+
 
