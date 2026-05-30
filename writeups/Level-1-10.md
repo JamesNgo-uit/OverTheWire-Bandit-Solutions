@@ -99,7 +99,7 @@ By combining these criteria, I was able to isolate the single file that met all 
   `find / -user bandit7 -group bandit6 -size 33c 2>dev/null`
 * `find`: To search for files or directories based on various filters like name, size, type, and modification time.
 
-**My logic:** The objective was to locate a specific file based on multiple attributes on the entire server. I utilized the `find` command, using a slash (`/`) to search for the entire root directory. I narrowed down the result by adding some strictly attributes like `-user bandit7 -group bandit6 -size 33c` to find the exact file from user bandit7, owned by group bandit6 and it has 33 bytes in size. Finally, I used the command `2>dev/null`, the objective of this command was to hide all the "permission denied" errors from the screen.
+**My logic:** The objective was to locate a specific file based on multiple attributes on the entire server. I utilized the `find` command, using a slash (`/`) to search for the entire root directory. I narrowed down the results by adding some strict attributes like `-user bandit7 -group bandit6 -size 33c` to find the exact file owned by user bandit7 and group bandit6, with a size of 33 bytes. Finally, I used the command `2>dev/null`, the objective of this command was to hide all the "permission denied" errors from the screen.
 
 
 ---
