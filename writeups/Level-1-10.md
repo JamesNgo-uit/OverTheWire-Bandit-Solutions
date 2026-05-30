@@ -96,11 +96,10 @@ By combining these criteria, I was able to isolate the single file that met all 
 **Goal:** The password for the next level is stored somewhere on the server and has all of following properties: owned by user bandit7, owned by group bandit 6, and 33 bytes in size.
 
 **Commands Used:**
-  `find / -user bandit7 -group bandit6 -size 33c 2>dev/null`
+  `find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`
 * `find`: To search for files or directories based on various filters like name, size, type, and modification time.
 
-**My logic:** The objective was to locate a specific file based on multiple attributes on the entire server. I utilized the `find` command, using a slash (`/`) to search for the entire root directory. I narrowed down the results by adding some strict attributes like `-user bandit7 -group bandit6 -size 33c` to find the exact file owned by user bandit7 and group bandit6, with a size of 33 bytes. Finally, I used the command `2>dev/null`, the objective of this command was to hide all the "permission denied" errors from the screen.
-
+**My logic:** The objective was to locate a specific file based on multiple attributes across the entire server. I utilized the `find` command, using a slash (`/`) to initiate a system-wide search from the entire root directory. I narrowed down the results by adding strict ownership and size criteria:  `-user bandit7`,` -group bandit6`, `-size 33c`(to match exactly 33 bytes). Because the system-wide search as a low_privilege user generates a massive volume of "Permission denied" errors, I appended `2>/dev/null` to the command. This redirected the standard error steam (stderr) to the Linux null device, effectively hiding the errors and allowing me to easily isolate the correct file path.
 
 ---
 
@@ -112,7 +111,8 @@ By combining these criteria, I was able to isolate the single file that met all 
   `grep "millionth" data.txt or cat data.txt | grep "millionth"`
 * `grep`: to search for a specific pattern (like "millionth") inside the file.
 
-**My logic:** I realized when I `cat` the file, a bunch of stuff appeared, and we could not seek or see any words in this file because it was like a hacker's monitor. So, we need something to filter the output and we got a useful command `grep`, which is used to search for a specific pattern inside a file. With this command, I can easily find the password in a short period of time.
+**My logic:** I observed that using `cat` command on the target file generated a massive wall of unstructured data that was impossible to scan manually.To filter this output and efficiently isolate the password, I utilized the `grep` command, which is designed to search for specific text patterns. By passing the word "millionth" as an arguement to `grep`, I was able to extract only the relevant line containing the password in the matter of seconds.
+
  
 ---
 
